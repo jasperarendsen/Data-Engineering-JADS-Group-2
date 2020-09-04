@@ -1,3 +1,5 @@
 import numpy as np
-np.test()
+a = np.arange(15).reshape(3, 5)
+print(a)
+
 
