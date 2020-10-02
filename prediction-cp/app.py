@@ -12,7 +12,8 @@ def predict_perf(model):
     content = request.get_json()
     df = pd.read_json(json.dumps(content), orient='records')
     if model == "mlp":
-        js = predictor.predict(df)
+        df_features = predictor.feature_engineer(df)
+        js = predictor.predict(df_features)
         resp = Response(js, status=200, mimetype='application/json')
         resp.headers['Access-Control-Allow-Origin'] = '*'
         resp.headers['Access-Control-Allow-Methods'] = 'POST'
