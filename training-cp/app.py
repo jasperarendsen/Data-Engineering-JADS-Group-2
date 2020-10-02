@@ -16,7 +16,7 @@ def train_models(model):
     j = r.json()
     df = pd.DataFrame.from_dict(j)
     if model == "mlp":
-        js = model_trainer.train(df.values)
+        js = model_trainer.train(df)
         resp = Response(js, status=200, mimetype='application/json')
         resp.headers['Access-Control-Allow-Origin'] = '*'
         resp.headers['Access-Control-Allow-Methods'] = 'POST'
