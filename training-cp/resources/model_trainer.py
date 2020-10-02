@@ -6,6 +6,7 @@ import os
 from sklearn import ensemble
 from sklearn.cluster import KMeans
 from matplotlib import pyplot as plt
+from sklearn.externals import joblib
 
 
 # def train(dataset):
@@ -76,10 +77,10 @@ def train(dataset):
     # Saving model in a given location (provided as an env. variable
     model_repo = os.environ['MODEL_REPO']
     if model_repo:
-        file_path = os.path.join(model_repo, "model.h5")
-        model.save(file_path)
+        file_path = os.path.join(model_repo, "model.pkl")
+        joblib.dump(model, file_path)
     else:
-        model.save("model.h5")
+        joblib.dump(model, 'model.pkl')
         return json.dumps({'message': 'The model was saved locally.'},
                           sort_keys=False, indent=4), 200
 
