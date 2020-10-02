@@ -38,9 +38,10 @@ def predict(dataset):
         file_path = os.path.join(model_repo, "model.pkl")
         model = pickle.load(open(file_path, 'rb'))
         val_set2 = dataset.copy()
-        result = model.predict(dataset)
-        y_classes = result.argmax(axis=-1)
-        val_set2['class'] = y_classes.tolist()
+        features = dataset[dataset.columns[2:]]
+        result = model.predict(features)
+        # y_classes = result.argmax(axis=-1)
+        val_set2['RUL'] = result.tolist()
         dic = val_set2.to_dict(orient='records')
         return json.dumps(dic, indent=4, sort_keys=False)
     else:
