@@ -6,7 +6,7 @@ import os
 from sklearn import ensemble
 from sklearn.cluster import KMeans
 from matplotlib import pyplot as plt
-from sklearn.externals import joblib
+from pickle
 
 
 # def train(dataset):
@@ -78,9 +78,9 @@ def train(dataset):
     model_repo = os.environ['MODEL_REPO']
     if model_repo:
         file_path = os.path.join(model_repo, "model.pkl")
-        joblib.dump(model, file_path)
+        pickle.dump(model, open(file_path, 'wb'))
     else:
-        joblib.dump(model, 'model.pkl')
+        pickle.dump(model, open('model.pkl', 'wb'))
         return json.dumps({'message': 'The model was saved locally.'},
                           sort_keys=False, indent=4), 200
 

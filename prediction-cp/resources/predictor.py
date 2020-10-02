@@ -2,15 +2,15 @@ import json
 import os
 
 from keras.models import load_model
-from sklearn.externals import joblib
+import pickle
 
 
 # make prediction
 def predict(dataset):
     model_repo = os.environ['MODEL_REPO']
     if model_repo:
-        file_path = os.path.join(model_repo, "model.h5")
-        model = joblib.load(file_path)
+        file_path = os.path.join(model_repo, "model.pkl")
+        model = pickle.load(open(file_path, 'rb'))
         val_set2 = dataset.copy()
         result = model.predict(dataset)
         y_classes = result.argmax(axis=-1)
