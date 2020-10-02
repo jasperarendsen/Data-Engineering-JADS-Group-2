@@ -43,8 +43,8 @@ from matplotlib import pyplot as plt
 
 
 def train(dataset): 
-    X = dataset[3:]
-    Y = dataset[2]
+    X = dataset[dataset.columns[3:]]
+    Y = dataset[dataset.columns[2]]
     
     #Clustering the data
     X_cluster = X[['setting1', 'setting2', 'setting3']]
