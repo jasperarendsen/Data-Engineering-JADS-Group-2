@@ -71,7 +71,7 @@ def train(dataset):
     
     # scores = model.evaluate(X, Y, verbose=0)
     text_out = {
-        "R2:": model.scores(X,Y)
+        "R2:": model.score(X,Y)
     }
     # Saving model in a given location (provided as an env. variable
     model_repo = os.environ['MODEL_REPO']
