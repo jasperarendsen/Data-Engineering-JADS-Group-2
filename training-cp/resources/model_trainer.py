@@ -6,7 +6,7 @@ import os
 from sklearn import ensemble
 from sklearn.cluster import KMeans
 from matplotlib import pyplot as plt
-from pickle
+import pickle
 
 
 # def train(dataset):
