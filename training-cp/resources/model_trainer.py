@@ -69,7 +69,7 @@ def train(dataset):
     model.fit(X, Y)
 
     
-    scores = model.evaluate(X, Y, verbose=0)
+    # scores = model.evaluate(X, Y, verbose=0)
     text_out = {
         "R2:": model.scores(X,Y)
     }
