@@ -56,10 +56,10 @@ def train(dataset):
     features = dataset.columns[3:-1]
     for feature in features:
         #Creating min, max and delta variables
-        X['max_' + feature] = X.groupby('engine_id')[feature].cummax()
-        X['min_' + feature] = X.groupby('engine_id')[feature].cummin()
+        X['max_' + feature] = dataset.groupby('engine_id')[feature].cummax()
+        X['min_' + feature] = dataset.groupby('engine_id')[feature].cummin()
 
-        X['delta_' + feature] = X.groupby('engine_id')[feature].diff()
+        X['delta_' + feature] = dataset.groupby('engine_id')[feature].diff()
         X['delta_' + feature].fillna(0, inplace=True)
     
     ###oude code
