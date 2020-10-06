@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="584d2470-a103-4da5-8eaa-104403fe3726" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/training-cp/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/training-cp/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/training-cp/resources/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training-cp/resources/model_trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/load_test/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_test/locustfile.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="824d6133-f688-4f2b-afd3-c20be12b2b5e" />
   <component name="ProjectId" id="1iJzYoZLeZpA3XMXsTNqYinpzCc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -20,6 +21,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -29,7 +37,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601640532847</updated>
+      <workItem from="1601971507161" duration="2796000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

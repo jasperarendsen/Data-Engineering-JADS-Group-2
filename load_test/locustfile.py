@@ -2,11 +2,11 @@ import time
 from locust import HttpUser, task, between
 import json
 
-with open('../test_resourses/training-db/train_data.json', 'wb') as outfile:
-    training_data = json.loads(outfile)
+with open('../test_resourses/training-db/train_data.json') as outfile:
+    training_data = json.load(outfile)
 
-with open('../test_resourses/training-db/predict_data.json', 'wb') as outfile:
-    predict_data = json.loads(outfile)
+with open('../test_resourses/training-db/predict_data.json') as outfile:
+    predict_data = json.load(outfile)
 
 
 class QuickstartUser(HttpUser):
@@ -14,7 +14,7 @@ class QuickstartUser(HttpUser):
 
     @task
     def load_data(self):
-        self.client.post("http://34.90.36.162:5000/training-db/rul", json={
+        self.client.post("http://35.232.3.223:5000/training-db/rul", json={
             "columns": [
                 "engine_id",
                 "cycle",
@@ -45,12 +45,12 @@ class QuickstartUser(HttpUser):
                 "s21"
             ]
         })
-        self.client.put("http://34.90.36.162:5000/training-db/rul", json=training_data)
+        self.client.put("http://35.232.3.223:5000/training-db/rul", json=training_data)
 
     @task
     def train_model(self):
-        self.client.post("http://34.90.36.162:5001/training-cp/mlp")
+        self.client.post("http://35.223.182.124:5001/training-cp/mlp")
 
     @task
     def predict(self):
-        self.client.post("http://34.90.36.162:5002/prediction-cp/mlp", json=predict_data)
+        self.client.post("http://34.67.131.42:5002/prediction-cp/mlp", json=predict_data)
