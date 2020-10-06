@@ -1,5 +1,5 @@
 import time
-from locust import HttpUser, task, between
+from locust import HttpUser, task, between, SequentialTaskSet
 import json
 
 with open('../test_resourses/training-db/train_data.json') as outfile:
@@ -9,9 +9,7 @@ with open('../test_resourses/training-db/predict_data.json') as outfile:
     predict_data = json.load(outfile)
 
 
-class QuickstartUser(HttpUser):
-    wait_time = between(1, 2)
-
+class QuickstartUser(SequentialTaskSet):
     @task
     def load_data(self):
         self.client.post("http://35.232.3.223:5000/training-db/rul", json={
@@ -54,3 +52,7 @@ class QuickstartUser(HttpUser):
     @task
     def predict(self):
         self.client.post("http://34.67.131.42:5002/prediction-cp/mlp", json=predict_data)
+
+class LoggedInUser(HttpUser):
+    wait_time = between(1, 2)
+    tasks = {QuickstartUser:2}
