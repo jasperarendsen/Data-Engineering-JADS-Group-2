@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="584d2470-a103-4da5-8eaa-104403fe3726" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_test/locustfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_test/locustfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prediction-cp/resources/predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/prediction-cp/resources/predictor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/training-cp/resources/model_trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/training-cp/resources/model_trainer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +38,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601640532847</updated>
-      <workItem from="1601971507161" duration="4642000" />
+      <workItem from="1601971507161" duration="4921000" />
+      <workItem from="1602013338528" duration="5541000" />
+      <workItem from="1602065430197" duration="1855000" />
     </task>
     <servers />
   </component>

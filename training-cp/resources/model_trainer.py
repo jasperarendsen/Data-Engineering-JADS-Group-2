@@ -47,14 +47,7 @@ def train(dataset):
     X = dataset[dataset.columns[3:]]
     Y = dataset[dataset.columns[2]]
     
-    #Clustering the data
-    X_cluster = X[['setting1', 'setting2', 'setting3']]
-
-    #creates the clusters
-    kmeans = KMeans(n_clusters=3).fit(X_cluster)
-    X['settings_clusters'] = kmeans.predict(X_cluster)
-    
-    features = dataset.columns[3:-1]
+    features = dataset.columns[3:]
     for feature in features:
         #Creating min, max and delta variables
         X['max_' + feature] = dataset.groupby('engine_id')[feature].cummax()

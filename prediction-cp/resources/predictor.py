@@ -11,14 +11,7 @@ def feature_engineer(dataset):
     engine = dataset.iloc[:,0].to_list()
     cycle = dataset.iloc[:,1].to_list()
 
-    # Clustering the data
-    X_cluster = X[['setting1', 'setting2', 'setting3']]
-
-    # creates the clusters
-    kmeans = KMeans(n_clusters=3).fit(X_cluster)
-    X['settings_clusters'] = kmeans.predict(X_cluster)
-
-    features = dataset.columns[2:-1]
+    features = dataset.columns[2:]
     for feature in features:
         # Creating min, max and delta variables
         X['max_' + feature] = dataset.groupby('engine_id')[feature].cummax()
